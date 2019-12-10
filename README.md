@@ -13,3 +13,17 @@
 [Git](https://git-scm.com/download)  
 [Visual Paradigm](https://www.visual-paradigm.com)  
  
+
+## 脚本
+```sql
+create table USER
+(
+	ID INTEGER primary key auto_increment,
+	NAME VARCHAR(100),
+	ACCOUNT_ID VARCHAR(35),
+	TOKEN VARCHAR(55),
+	GMT_CREATE BIGINT,
+	GMT_MODIFIED BIGINT
+);
+
+```

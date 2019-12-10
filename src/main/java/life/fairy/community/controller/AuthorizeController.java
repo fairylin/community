@@ -42,18 +42,15 @@ public class AuthorizeController {
         accessTokenDTO.setCode(code);
         accessTokenDTO.setRedirect_uri(redirectUri);
         accessTokenDTO.setState(state);
-        System.out.println(accessTokenDTO);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accessToken);
-        System.out.println(githubUser);
         if (githubUser != null) {
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
             user.setName(githubUser.getName());
-            user.setAccoutId(String.valueOf(githubUser.getId()));
+            user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModefied(user.getGmtCreate());
-            System.out.println(user);
+            user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
             // 登录成功，写cookie 和session
             request.getSession().setAttribute("user", githubUser);

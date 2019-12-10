@@ -3,10 +3,10 @@ package life.fairy.community.model;
 public class User {
     private Integer id;
     private String name;
-    private String accoutId;
+    private String accountId;
     private String token;
     private Long gmtCreate;
-    private Long gmtModefied;
+    private Long gmtModified;
 
     public Integer getId() {
         return id;
@@ -24,12 +24,12 @@ public class User {
         this.name = name;
     }
 
-    public String getAccoutId() {
-        return accoutId;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setAccoutId(String accoutId) {
-        this.accoutId = accoutId;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public String getToken() {
@@ -48,11 +48,11 @@ public class User {
         this.gmtCreate = gmtCreate;
     }
 
-    public Long getGmtModefied() {
-        return gmtModefied;
+    public Long getGmtModified() {
+        return gmtModified;
     }
 
-    public void setGmtModefied(Long gmtModefied) {
-        this.gmtModefied = gmtModefied;
+    public void setGmtModified(Long gmtModified) {
+        this.gmtModified = gmtModified;
     }
 }
