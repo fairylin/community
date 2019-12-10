@@ -12,17 +12,21 @@ import java.io.IOException;
 public class GithubProvider {
 
     public String getAccessToken(AccessTokenDTO accessTokenDTO) {
+        // 获取accessToken 字段的值
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
 
         RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenDTO));
+        System.out.println(body);
         Request request = new Request.Builder()
                 .url("https://github.com/login/oauth/access_token")
                 .post(body)
                 .build();
         try (Response response = client.newCall(request).execute()) {
             String string = response.body().string();
+            System.out.println(string);
             String token = string.split("&")[0].split("=")[1];
+            System.out.println(token);
             return token;
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,6 +35,7 @@ public class GithubProvider {
     }
 
     public GithubUser getUser(String accessToken) {
+        // 获取 github user相关信息
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("https://api.github.com/user?access_token=" + accessToken)
@@ -39,7 +44,9 @@ public class GithubProvider {
         try {
             Response response = client.newCall(request).execute();
             String string = response.body().string();
+            System.out.println(string);
             GithubUser githubUser = JSON.parseObject(string, GithubUser.class);
+            System.out.println(githubUser);
             return githubUser;
         } catch (IOException e) {
         }
