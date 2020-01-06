@@ -9,4 +9,22 @@ body {
 
 .btn-publish {
     float: right;
+    margin-bottom: 15px;
+}
+
+.btn-publish-error {
+    width: 80%;
+    text-align: left;
+    height: 50px;
+}
+
+.media-object {
+    width: 45px;
+    height: 45px;
+}
+
+.text-desc {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
 }
