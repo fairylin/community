@@ -9,6 +9,7 @@
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)  
 [菜鸟教程](https://www.runoob.com/mysql/mysql-insert-query.html)  
 [Thymeleaf 文档](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)  
+[jQuery 文档](https://code.jquery.com/jquery-3.4.1.js)  
 
 ## 工具
 [Git](https://git-scm.com/download)  
